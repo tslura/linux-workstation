@@ -10,7 +10,7 @@ autocmd! bufwritepost .vimrc source %
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
 
-set pastetoggle=<F2>
+set pastetoggle=<F12>
 set clipboard=unnamed
 
 
@@ -132,6 +132,10 @@ call pathogen#infect()
 " Python IDE Setup
 " ============================================================================
 
+" Run pythonscript from vim
+"
+autocmd BufWinEnter *.py nnoremap <Leader>rr :w<CR>:!python3 %:p<CR>
+
 " Settings for tComment
 " cd ~/.vim/bundle
 " git clone https://github.com/tomtom/tcomment_vim.git
@@ -144,7 +148,7 @@ call pathogen#infect()
 
 " Settings for vim-powerline - cool statusline
 " cd ~/.vim/bundle
-" git clone git://github.com/Lokaltog/vim-powerline.git
+" git clone http://github.com/Lokaltog/vim-powerline.git
  set laststatus=2
 
 
@@ -163,7 +167,7 @@ set wildignore+=*/coverage/*
 
 " Settings for jedi-vim - autocompletion in python
 " cd ~/.vim/bundle
-" git clone git://github.com/davidhalter/jedi-vim.git
+" git clone http://github.com/davidhalter/jedi-vim.git
 let g:jedi#usages_command = "<leader>z"
 " let g:jedi#popup_on_dot = 0
 " let g:jedi#popup_select_first = 0
